@@ -1,0 +1,51 @@
+========================================================================================
+                               MENTOR-AI CODEBASE FLOWCHART
+========================================================================================
+
+                         [ Browser / User Visits localhost:3000 ]
+                                            │
+                                            ▼
+                                   src/app/layout.js
+                        (Root Layout: HTML, Fonts, Global CSS)
+                                            │
+                                            ▼
+                                    src/app/page.js
+                         (State Controller: Stores 'userPlan')
+                                            │
+               ┌────────────────────────────┴────────────────────────────┐
+               │                                                         │
+   [ If userPlan === null ]                                  [ If userPlan exists ]
+               │                                                         │
+               ▼                                                         ▼
+    OnboardingWizard.jsx                                      Dashboard.jsx
+ (5-Step Form: Lang, Level,                                (Roadmap View, Progress
+  Goal, Time, Daily Hours)                                  Bar, Streak Heatmap)
+               │                                                         │
+               │ (Submits Form)                                ┌─────────┴─────────┐
+               └─────────────► [ Updates State ] ──────────────┤                   │
+                                                               ▼                   ▼
+                                                          TaskModal.jsx     AIChatModal.jsx
+                                                          (30-Min Lesson     (Slide-out AI
+                                                          & Quiz Tabs)        Tutor Drawer)
+                                                               │                   │
+===============================================================│===================│====
+                                 SERVER / BACKEND LAYER        │                   │
+===============================================================│===================│====
+                                                               ▼                   ▼
+                                                      [ Next.js API Routes ]
+                                                    src/app/api/.../route.js
+                                                    (Secure Server Logic)
+                                                               │
+                                                               ▼
+                                                      .env.local / .env
+                                                    (Stores GEMINI_API_KEY)
+
+========================================================================================
+                             PROJECT CONFIGURATION & tooling
+========================================================================================
+
+  ├── tailwind.config.js & postcss.config.mjs ──► Controls CSS utility styling rules
+  ├── package.json                            ──► Lists installed packages & scripts
+  ├── jsconfig.json                           ──► Enables '@/' import path aliases
+  ├── eslint.config.mjs                       ──► Code quality & syntax checker
+  └── .gitignore                              ──► Prevents node_modules & secrets in Git
