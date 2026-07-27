@@ -1,0 +1,535 @@
+Product Requirements Document (PRD)
+Project Codename: MentorAI
+
+Version: 1.0
+
+1. Vision
+
+Create an AI-powered programming tutor that feels like a real mentor rather than a chatbot.
+
+Unlike ChatGPT, where students need to know what questions to ask, MentorAI guides them through a structured learning journey tailored to their goals, available time, and current skill level.
+
+The platform removes the need for prompt engineering and instead delivers a personalized curriculum, interactive coding exercises, quizzes, and AI mentorship.
+
+2. Problem Statement
+
+Current AI chatbots have three major problems for beginners:
+
+Problem 1
+
+Students don't know what to ask.
+
+A beginner doesn't know:
+
+What to learn first
+What to learn next
+Which concepts are important
+Problem 2
+
+Good learning depends on good prompts.
+
+Example:
+
+Instead of typing
+
+"Teach me Python from beginner to intermediate in 60 days using active recall, quizzes, coding exercises..."
+
+Most beginners type
+
+"Teach me python"
+
+The result is inconsistent.
+
+Problem 3
+
+Chatbots don't remember your learning journey.
+
+They don't know
+
+what you've mastered
+what you struggle with
+what you've already learned
+3. Solution
+
+MentorAI becomes a personal programming mentor.
+
+Instead of waiting for prompts, it generates a complete personalized roadmap and guides students through it one lesson at a time.
+
+The student simply chooses:
+
+Programming language
+Current level
+Goal
+Available time
+
+The system generates everything else.
+
+4. Target Users
+Primary
+Complete beginners
+Secondary
+College students
+Self-taught developers
+Career switchers
+Tertiary
+Experienced programmers learning a new language
+5. User Journey
+Landing Page
+Welcome to MentorAI
+
+What would you like to learn?
+
+Python
+C++
+Java
+Rust
+Go
+JavaScript
+
+After selecting a language
+
+How experienced are you?
+
+○ Beginner
+
+○ Know the basics
+
+○ Intermediate
+
+○ Advanced
+
+Next
+
+What is your goal?
+
+○ College
+
+○ Placement
+
+○ Data Science
+
+○ AI
+
+○ Competitive Programming
+
+○ Web Development
+
+○ Automation
+
+○ Embedded Systems
+
+Next
+
+How much time do you have?
+
+14 Days
+
+30 Days
+
+60 Days
+
+90 Days
+
+6 Months
+
+Custom
+
+Next
+
+How many hours can you study each day?
+
+30 mins
+
+1 hour
+
+2 hours
+
+3+ hours
+
+Student clicks
+
+Generate My Learning Plan
+
+6. AI Flow
+
+Student selections
+
+↓
+
+Backend generates an optimized system prompt
+
+↓
+
+RAG retrieves relevant programming material
+
+↓
+
+LLM creates curriculum
+
+↓
+
+Curriculum saved
+
+↓
+
+Student starts Day 1
+
+7. Core Features
+7.1 Personalized Roadmap
+
+Example
+
+Python
+
+60 Days
+
+Day 1
+Variables
+
+Day 2
+Data Types
+
+Day 3
+Operators
+
+Day 4
+Functions
+
+...
+
+Day 60
+Final Project
+7.2 AI Tutor
+
+Instead of a chatbot
+
+The AI behaves like
+
+A patient programming mentor
+
+It should
+
+explain concepts simply
+ask questions
+wait for responses
+give hints
+never overload
+7.3 Interactive Lessons
+
+Each lesson contains
+
+Explanation
+
+↓
+
+Examples
+
+↓
+
+Visualization
+
+↓
+
+Practice
+
+↓
+
+Quiz
+
+↓
+
+Mini Project
+
+↓
+
+Reflection
+7.4 Code Editor
+
+Embedded editor
+
+Supports
+
+syntax highlighting
+run code
+save progress
+
+AI reviews code
+
+Instead of
+
+❌ Wrong
+
+It says
+
+You're close.
+
+Look at line 7.
+
+Think about what happens when x becomes 0.
+
+7.5 Adaptive Learning
+
+AI tracks
+
+mistakes
+quiz scores
+coding errors
+repeated concepts
+
+If student struggles with loops
+
+Future lessons automatically include more loop practice.
+
+7.6 Quiz Engine
+
+Every lesson ends with
+
+MCQs
+Predict the output
+Fix the bug
+Write code
+7.7 AI Hint System
+
+Hint 1
+
+Tiny hint
+
+↓
+
+Hint 2
+
+Medium hint
+
+↓
+
+Hint 3
+
+Large hint
+
+↓
+
+Solution
+
+7.8 Projects
+
+Each roadmap contains projects.
+
+Example
+
+Python
+
+Week 1
+
+Calculator
+
+Week 2
+
+Guessing Game
+
+Week 3
+
+Expense Tracker
+
+Week 4
+
+CLI Todo App
+
+Week 5
+
+Weather App
+
+Week 6
+
+Chatbot
+
+7.9 Progress Dashboard
+
+Shows
+
+Current Streak
+
+Lessons Completed
+
+Hours Studied
+
+Projects Built
+
+Quiz Accuracy
+
+Concept Mastery
+
+Completion %
+7.10 AI Memory
+
+The tutor remembers
+
+previous conversations
+mistakes
+strengths
+goals
+8. Future Features
+AI Voice Tutor
+
+Like talking to a real teacher.
+
+Whiteboard
+
+AI draws diagrams
+
+Stacks
+
+Queues
+
+Trees
+
+Recursion
+
+Memory Layout
+
+Interview Mode
+
+Mock coding interviews.
+
+Flashcards
+
+Automatic spaced repetition.
+
+Debug Mode
+
+Paste code
+
+AI teaches debugging instead of fixing.
+
+Pair Programming
+
+Student writes code.
+
+AI collaborates live.
+
+Multiplayer Study Rooms
+
+Study with friends.
+
+Daily Challenges
+
+One coding problem every day.
+
+9. AI Architecture
+Frontend (Next.js)
+
+↓
+
+Backend (FastAPI)
+
+↓
+
+Authentication
+
+↓
+
+Curriculum Generator
+
+↓
+
+Learning Engine
+
+↓
+
+RAG Retrieval Layer
+
+↓
+
+Vector Database
+
+↓
+
+Programming Books
+
+↓
+
+LLM
+
+↓
+
+Response
+10. Tech Stack
+
+Frontend
+
+Next.js
+React
+Tailwind CSS
+Monaco Editor
+
+Backend
+
+FastAPI (Python)
+
+Database
+
+PostgreSQL
+
+Authentication
+
+Clerk or Auth.js
+
+Vector Database
+
+Qdrant or Pinecone
+
+LLM
+
+OpenAI GPT, Llama, Gemma, or Mistral (swappable)
+
+Embeddings
+
+OpenAI or Sentence Transformers
+
+Deployment
+
+Vercel (frontend)
+Railway / Render / Fly.io (backend)
+11. Monetization
+Free
+One learning path
+Limited AI chats
+Basic quizzes
+Premium
+Unlimited tutoring
+Unlimited languages
+AI code reviews
+Voice tutor
+Advanced analytics
+Mock interviews
+Personalized projects
+12. Success Metrics (MVP)
+User completes onboarding in under 3 minutes.
+User receives a personalized roadmap within 30 seconds.
+70%+ of users complete their first lesson.
+50%+ of users return within 7 days.
+Average daily study time exceeds 20 minutes.
+Average quiz score improves over time for active users.
+13. MVP Scope (Version 1)
+
+Focus on doing one thing exceptionally well.
+
+Included:
+
+Python as the only supported language.
+Personalized onboarding and roadmap generation.
+AI tutor with RAG over high-quality Python resources.
+Lesson pages with explanations, examples, quizzes, and coding exercises.
+Built-in code editor with AI feedback.
+Progress tracking and adaptive review of weak concepts.
+
+Deferred to later versions:
+
+Additional programming languages.
+Voice conversations.
+Mobile app.
+Multiplayer study rooms.
+Pair programming.
+Gamification beyond basic streaks.
+14. Long-Term Vision
+
+MentorAI becomes the Duolingo + GitHub Copilot + Khan Academy for programming: an AI-first learning platform where students don't just ask questions—they follow a personalized, adaptive journey that helps them become confident software engineers through guided practice, real projects, and continuous feedback.
