@@ -1,19 +1,21 @@
 'use client';
 
 import { useState } from 'react';
-import OnboardingWizard from '@/components/OnboardingWizard';
-import Dashboard from '@/components/Dashboard';
+import Onboarding from '../components/OnboardingWizard';
+import Dashboard from '../components/Dashboard';
 
 export default function Home() {
-  const [userPlan, setUserPlan] = useState(null);
+  const [hasPlan, setHasPlan] = useState(false);
 
   return (
-    <main className="bg-gh-bg min-h-screen">
-      {!userPlan ? (
-        <OnboardingWizard onComplete={(data) => setUserPlan(data)} />
+    <main>
+      {!hasPlan ? (
+        <Onboarding onComplete={() => setHasPlan(true)} />
       ) : (
-        <Dashboard planData={userPlan} onReset={() => setUserPlan(null)} />
+        <Dashboard onReset={() => setHasPlan(false)} />
       )}
     </main>
   );
 }
+
+
